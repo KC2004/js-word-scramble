@@ -21,16 +21,22 @@
 
         while (playing) {
 
-            word_index = getRandomInt(WORDS.length);
+            var word_index = getRandomInt(WORDS.length);
 
             // Grab a random word from the WORDS array.
-            chosen_word = WORDS[word_index];
+            var chosen_word = WORDS[word_index];
             
             // Grab the corresponding scrambled word from the SCRAMBLED array.
-            scrambled_word = SCRAMBLED[word_index];
+            var scrambled_word = SCRAMBLED[word_index];
 
             // Prompt the user to guess the original word when given the scrambled word.
-            guess = prompt("Unscramble this word!: " + scrambled_word);
+            
+            var guess = prompt("Unscramble this word!: " + scrambled_word);
+            if (guess) {
+                guess = guess.toLowerCase().trim();
+            }
+
+            //guess = guess.trim();
 
             // If the user guesses wrong, tell them they were wrong and show the right word.
             if (guess != chosen_word){
